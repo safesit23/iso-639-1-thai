@@ -1,7 +1,7 @@
 {
-  "name": "iso-639-1",
-  "version": "2.1.5",
-  "description": "ISO-639-1 codes",
+  "name": "iso-639-1-thai",
+  "version": "1.0.0",
+  "description": "ISO-639-1 Get codes and name of languages in thai",
   "main": "build/index.js",
   "module": "src/index.js",
   "typings": "index.d.ts",
@@ -11,18 +11,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/meikidd/iso-639-1.git"
+    "url": "git+https://github.com/safesit23/iso-639-1-thai"
   },
   "keywords": [
     "iso",
     "iso-639",
     "iso-639-1",
     "language",
-    "language code",
-    "locale",
-    "locale code"
+    "ภาษา",
+    "ไทย",
+    "Thai",
+    "language code"
   ],
-  "author": "meikidd <meikidd@gmail.com>",
+  "author": "jatawatsafe <jatawatsafe@hotmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/meikidd/iso-639-1/issues"
@@ -39,7 +40,7 @@
     "mocha": "^4.0.1",
     "webpack": "^3.10.0"
   },
-  "homepage": "https://github.com/meikidd/iso-639-1#readme",
+  "homepage": "https://github.com/safesit23/iso-639-1-thai",
   "engines": {
     "node": ">=6.0"
   }
