@@ -1,15 +1,18 @@
 declare module "iso-639-1" {
   interface ISO6391 {
-    getName: (code: string) => string;
-    getAllNames: () => Array<string>;
+    getNameEN: (code: string) => string;
+    getNameTH: (code: string) => string;
     getNativeName: (code: string) => string;
+    getAllNamesTH: () => Array<string>;
+    getAllNamesEN: () => Array<string>;
     getAllNativeNames: () => Array<string>;
     getCode: (name: string) => string;
     getAllCodes: () => Array<string>;
     validate: (code: string) => boolean;
     getLanguages: (codes: Array<string>) => Array<{
       code: string;
-      name: string;
+      nameTH: string;
+      nameEN: string;
       nativeName: string;
     }>;
   }
