@@ -5,9 +5,9 @@
 
 [travis-image]: https://travis-ci.com/safesit23/iso-639-1-thai.svg?branch=master&status=passed
 [travis-url]: https://travis-ci.com/safesit23/iso-639-1-thai
-[npm-image]: https://img.shields.io/npm/v/iso-639-1.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/iso-639-1
-[download-url]: https://img.shields.io/npm/dt/iso-639-1.svg?style=flat-square
+[npm-image]: https://img.shields.io/npm/v/iso-639-1-thai.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/iso-639-1-thai
+[download-url]: https://img.shields.io/npm/dt/iso-639-1-thai.svg?style=flat-square
 
 
 Simple interface for [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes
@@ -24,14 +24,14 @@ npm install iso-639-1-thai
 
 ```javascript
 const ISO6391 = require('iso-639-1');
-console.log(ISO6391.getName('en')); // 'English'
+console.log(ISO6391.getNameEN('en')); // 'English'
 ```
 
 ### ES Module
 
 ```javascript
 import ISO6391 from 'iso-639-1';
-console.log(ISO6391.getName('en')); // 'English'
+console.log(ISO6391.getNameEN('en')); // 'English'
 ```
 
 ### Browsers
@@ -45,27 +45,38 @@ HTML
 Visit global variable ISO6391 in js
 
 ```javascript
-console.log(ISO6391.getName('en')); // 'English'
+console.log(ISO6391.getNameEN('en')); // 'English'
 ```
 
 ## Methods
 
-### getName(code)
+### getNameTH(code)
+  - @param code {string}
+  - @return {string}
+
+Lookup language thai name by code
+
+### getNameEN(code)
   - @param code {string}
   - @return {string}
 
 Lookup language english name by code
-
-### getAllNames()
-  - @return {array}
-
-Get array of all language english names
 
 ### getNativeName(code)
   - @param code {string}
   - @return {string}
 
 Lookup language native name by code
+
+### getAllNamesTH()
+  - @return {array}
+
+Get array of all language thai names
+
+### getAllNamesEN()
+  - @return {array}
+
+Get array of all language english names
 
 ### getAllNativeNames()
   - @return {array}
@@ -101,14 +112,16 @@ Get the array of the language objects by the given codes
 ```
 const ISO6391 = require('iso-639-1')
 
-console.log(ISO6391.getName('zh')) // 'Chinese'
+console.log(ISO6391.getNameTH('th')) // 'ไทย'
+console.log(ISO6391.getNamEN('th')) // 'Thai'
 console.log(ISO6391.getNativeName('zh')) // '中文'
 
-console.log(ISO6391.getAllNames()) // ['Afar','Abkhaz', ... ,'Zulu']
+console.log(ISO6391.getAllNamesTH()) // ['อาฟาร์','อับฮาเซีย', ... ,'ซูลู']
+console.log(ISO6391.getAllNamesEN()) // ['Afar','Abkhaz', ... ,'Zulu']
 console.log(ISO6391.getAllNativeNames()) //['Afaraf','аҧсуа бызшәа', ... ,'isiZulu' ]
 
-console.log(ISO6391.getCode('Chinese')) // 'zh'
-console.log(ISO6391.getCode('中文')) // 'zh'
+console.log(ISO6391.getCode('ไทย')) // 'th'
+console.log(ISO6391.getCode('Thai')) // 'th'
 
 console.log(ISO6391.getAllCodes()) //['aa','ab',...,'zu']
 
@@ -116,6 +129,6 @@ console.log(ISO6391.validate('en')) // true
 console.log(ISO6391.validate('xx')) // false
 
 console.log(ISO6391.getLanguages(['en', 'zh']))
-// [{code:'en',name:'English',nativeName:'English'},{code:'zh',name:'Chinese',nativeName:'中文'}]
+// [{code:'en',nameTH:'อังกฤษ',nameEN:'English',nativeName:'English'},{code:'zh',nameTH:'จีน',namEN:'Chinese',nativeName:'中文'}]
 
 ```
