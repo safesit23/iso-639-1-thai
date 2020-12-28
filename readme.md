@@ -1,4 +1,4 @@
-# ISO-639-1
+# ISO-639-1-thai
 [![NPM Version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
 [![Download Count][download-url]][npm-url]
