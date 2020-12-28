@@ -1,18 +1,33 @@
 const assert = require('assert');
 const ISO6391 = require('../build/index');
 
-describe('getName()', function() {
+describe('getNameEN()', function() {
   it('en', function() {
-    assert.equal(ISO6391.getName('en'), 'English');
+    assert.equal(ISO6391.getNameEN('en'), 'English');
   });
   it('zh', function() {
-    assert.equal(ISO6391.getName('zh'), 'Chinese');
+    assert.equal(ISO6391.getNameEN('zh'), 'Chinese');
   });
   it('xx', function() {
-    assert.equal(ISO6391.getName('xx'), '');
+    assert.equal(ISO6391.getNameEN('xx'), '');
   });
   it('toString', function() {
-    assert.equal(ISO6391.getName('toString'), '');
+    assert.equal(ISO6391.getNameEN('toString'), '');
+  });
+});
+
+describe('getNameTH()', function() {
+  it('th', function() {
+    assert.equal(ISO6391.getNameTH('th'), 'ไทย');
+  });
+  it('es', function() {
+    assert.equal(ISO6391.getNameTH('es'), 'สเปน');
+  });
+  it('xx', function() {
+    assert.equal(ISO6391.getNameTH('xx'), '');
+  });
+  it('toString', function() {
+    assert.equal(ISO6391.getNameTH('toString'), '');
   });
 });
 
@@ -47,6 +62,9 @@ describe('getCode()', function() {
   it('toString', function() {
     assert.equal(ISO6391.getCode('toString'), '');
   });
+  it('สเปน', function() {
+    assert.equal(ISO6391.getCode('สเปน'), 'es');
+  });
 });
 
 describe('validate()', function() {
@@ -69,22 +87,26 @@ describe('getLanguages()', function() {
     assert.deepEqual(ISO6391.getLanguages(['en', 'zh', 'xx', 'toString']), [
       {
         code: 'en',
-        name: 'English',
+        nameTH: 'อังกฤษ',
+        nameEN: 'English',
         nativeName: 'English',
       },
       {
         code: 'zh',
-        name: 'Chinese',
+        nameTH: 'จีน',
+        nameEN: 'Chinese',
         nativeName: '中文',
       },
       {
         code: 'xx',
-        name: '',
+        nameTH: '',
+        nameEN: '',
         nativeName: '',
       },
       {
         code: 'toString',
-        name: '',
+        nameTH: '',
+        nameEN: '',
         nativeName: '',
       },
     ]);
