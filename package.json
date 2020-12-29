@@ -1,6 +1,6 @@
 {
   "name": "iso-639-1-thai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ISO-639-1 Get codes and name of languages in thai",
   "main": "build/index.js",
   "module": "src/index.js",
